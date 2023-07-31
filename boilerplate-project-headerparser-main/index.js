@@ -18,10 +18,15 @@ app.use(express.static('public'));
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
-
-// your first API endpoint...
-app.get('/api/hello', function (req, res) {
-  res.json({ greeting: 'hello API' });
+app.get('/api/whoami', function (req, res) {
+  var ipaddress = "111.111.111.111";
+  var language = "arabic";
+  var software = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0";
+  res.json({
+    "ipaddress":ipaddress,
+    "language":language,
+    "software": software
+  })
 });
 
 // listen for requests :)
